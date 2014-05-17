@@ -55,7 +55,7 @@ public class ListCalcFragment extends ListFragment {
 		form.setOnPushNumber(new CalcInputForm.EventPushNumber() {
 			@Override
 			public void onPushNumber(CalcType type, BigDecimal num) {
-				adapter.listRaw.add(new ListCalcAdapter.Item(type,num));
+				adapter.listRaw.add(new ListCalcAdapter.Item(type, num));
 				adapter.notifyDataSetChanged();
 				getListView().smoothScrollToPosition(getListView().getCount());
 			}

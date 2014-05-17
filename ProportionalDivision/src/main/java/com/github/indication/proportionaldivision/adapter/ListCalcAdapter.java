@@ -18,18 +18,22 @@ public class ListCalcAdapter extends BaseAdapter {
 		public CalcType type;
 		public BigDecimal input;
 		public boolean isValid;
-		public Item(){
+
+		public Item() {
 
 		}
-		public Item(CalcType calcType,BigDecimal data){
+
+		public Item(CalcType calcType, BigDecimal data) {
 			type = calcType;
 			input = data;
 			isValid = true;
 		}
 	}
-	static public class ResultItem extends Item{
+
+	static public class ResultItem extends Item {
 		public BigDecimal result;
-		public ResultItem(){
+
+		public ResultItem() {
 			super();
 		}
 
@@ -37,12 +41,13 @@ public class ListCalcAdapter extends BaseAdapter {
 			super(calcType, data);
 			result = BigDecimal.ZERO;
 		}
-		public ResultItem(Item in){
+
+		public ResultItem(Item in) {
 			importItem(in);
 			result = BigDecimal.ZERO;
 		}
 
-		public void importItem(Item in){
+		public void importItem(Item in) {
 			type = in.type;
 			input = in.input;
 			isValid = in.isValid;
@@ -52,18 +57,19 @@ public class ListCalcAdapter extends BaseAdapter {
 
 	public List<Item> listRaw = new ArrayList<Item>();
 	private List<ResultItem> listResult = new ArrayList<ResultItem>();
+
 	@Override
 	public void notifyDataSetChanged() {
 		listResult.clear();
 		BigDecimal current = null;
-		for(Item wk :listRaw ){
+		for (Item wk : listRaw) {
 			ResultItem item = new ResultItem(wk);
-			if(current == null){
+			if (current == null) {
 				current = new BigDecimal(wk.input.toString());
 				item.type = CalcType.None;
 			} else {
 				// start calculate
-				switch(wk.type){
+				switch (wk.type) {
 					case None:
 						//fall through
 					default:
@@ -93,7 +99,8 @@ public class ListCalcAdapter extends BaseAdapter {
 		super.notifyDataSetInvalidated();
 		clear();
 	}
-	public void clear(){
+
+	public void clear() {
 		listRaw.clear();
 		listResult.clear();
 	}
@@ -119,9 +126,9 @@ public class ListCalcAdapter extends BaseAdapter {
 			LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
 			convertView = inflater.inflate(R.layout.item_calc_list, null);
 		}
-		if(convertView != null){
-			ResultItem rec = (ResultItem)getItem(i);
-			if(rec == null){
+		if (convertView != null) {
+			ResultItem rec = (ResultItem) getItem(i);
+			if (rec == null) {
 			} else {
 				CalcItemForm form = new CalcItemForm(convertView);
 				form.setValue(rec);

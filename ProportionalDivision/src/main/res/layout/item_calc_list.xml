@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content">
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content">
 
 	<TextView
 		android:id="@+id/textResult"
@@ -15,7 +15,7 @@
 		android:gravity="right"
 		android:text="123.5"
 		android:textAppearance="?android:attr/textAppearanceLarge"
-		android:textSize="40sp" />
+		android:textSize="40sp"/>
 
 	<TextView
 		android:id="@+id/textSymbolEquals"
@@ -24,7 +24,7 @@
 		android:layout_alignBottom="@+id/textResult"
 		android:layout_toLeftOf="@+id/textResult"
 		android:text=" = "
-		android:textSize="40sp" />
+		android:textSize="40sp"/>
 
 	<TextView
 		android:id="@+id/textView"
@@ -38,7 +38,7 @@
 		android:gravity="right"
 		android:singleLine="true"
 		android:text="123.5"
-		android:textSize="40sp" />
+		android:textSize="40sp"/>
 
 	<TextView
 		android:id="@+id/textKey"
@@ -51,5 +51,5 @@
 		android:singleLine="false"
 		android:text="+"
 		android:textAppearance="?android:attr/textAppearanceLarge"
-		android:textSize="40sp" />
+		android:textSize="40sp"/>
 </RelativeLayout>

@@ -1,4 +1,3 @@
-
 package com.github.indication.proportionaldivision.enumurations;
 
 public enum CalcType {
@@ -6,14 +5,15 @@ public enum CalcType {
 	Plus("+"),
 	Minus("-"),
 	Devide("/"),
-	Multiple("*"),
-	;
+	Multiple("*"),;
 
 	private String symbol;
-	CalcType(String s){
+
+	CalcType(String s) {
 		symbol = s;
 	}
-	public String getSymbol(){
+
+	public String getSymbol() {
 		return symbol;
 	}
 }

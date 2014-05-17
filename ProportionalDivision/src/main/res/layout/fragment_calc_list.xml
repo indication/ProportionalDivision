@@ -1,12 +1,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:paddingBottom="@dimen/activity_vertical_margin"
-	android:paddingLeft="@dimen/activity_horizontal_margin"
-	android:paddingRight="@dimen/activity_horizontal_margin"
-	android:paddingTop="@dimen/activity_vertical_margin"
-	tools:context="com.github.indication.proportionaldivision.MainActivity$PlaceholderFragment">
+				xmlns:tools="http://schemas.android.com/tools"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:paddingBottom="@dimen/activity_vertical_margin"
+				android:paddingLeft="@dimen/activity_horizontal_margin"
+				android:paddingRight="@dimen/activity_horizontal_margin"
+				android:paddingTop="@dimen/activity_vertical_margin"
+				tools:context="com.github.indication.proportionaldivision.MainActivity$PlaceholderFragment">
 
 
 	<ListView
@@ -17,7 +17,7 @@
 		android:layout_alignParentLeft="true"
 		android:layout_alignParentStart="true"
 		android:layout_alignParentTop="true"
-		tools:listitem="@layout/item_calc_list" />
+		tools:listitem="@layout/item_calc_list"/>
 
 	<LinearLayout
 		android:id="@+id/linearLayout"
@@ -43,14 +43,14 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="Clear"
-					android:textAppearance="?android:attr/textAppearanceSmall" />
+					android:textAppearance="?android:attr/textAppearanceSmall"/>
 
 				<Switch
 					android:id="@+id/switchClear"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:clickable="false"
-					android:focusableInTouchMode="false" />
+					android:focusableInTouchMode="false"/>
 			</LinearLayout>
 
 			<Button
@@ -58,28 +58,28 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="+"
-				tools:ignore="HardcodedText" />
+				tools:ignore="HardcodedText"/>
 
 			<Button
 				android:id="@+id/buttonMinus"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="-"
-				tools:ignore="HardcodedText" />
+				tools:ignore="HardcodedText"/>
 
 			<Button
 				android:id="@+id/buttonMultiple"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="*"
-				tools:ignore="HardcodedText" />
+				tools:ignore="HardcodedText"/>
 
 			<Button
 				android:id="@+id/buttonDevide"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="/"
-				tools:ignore="HardcodedText" />
+				tools:ignore="HardcodedText"/>
 		</LinearLayout>
 
 		<LinearLayout
@@ -93,7 +93,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="C"
-				tools:ignore="HardcodedText" />
+				tools:ignore="HardcodedText"/>
 
 			<ToggleButton
 				android:id="@+id/toggleButtonKeep"
@@ -101,7 +101,7 @@
 				android:layout_height="wrap_content"
 				android:textAppearance="?android:attr/textAppearanceSmall"
 				android:textOff="Clear"
-				android:textOn="Keep" />
+				android:textOn="Keep"/>
 
 			<EditText
 				android:id="@+id/editText"
@@ -114,7 +114,7 @@
 				android:imeOptions="actionNone"
 				android:inputType="numberSigned|numberDecimal"
 				android:numeric="decimal"
-				android:textAppearance="?android:attr/textAppearanceLarge" />
+				android:textAppearance="?android:attr/textAppearanceLarge"/>
 
 		</LinearLayout>
 

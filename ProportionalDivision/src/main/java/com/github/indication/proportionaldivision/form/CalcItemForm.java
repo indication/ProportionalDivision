@@ -15,7 +15,7 @@ public class CalcItemForm {
 	public TextView textView;
 	public TextView textSymbolEquals;
 
-	public CalcItemForm(View view){
+	public CalcItemForm(View view) {
 		setup(view);
 	}
 
@@ -27,8 +27,8 @@ public class CalcItemForm {
 	}
 
 
-	public void setValue(ListCalcAdapter.ResultItem item){
-		if(item == null)
+	public void setValue(ListCalcAdapter.ResultItem item) {
+		if (item == null)
 			item = new ListCalcAdapter.ResultItem(CalcType.None, BigDecimal.ZERO);
 		int visible = CalcType.None.equals(item.type) ? View.GONE : View.VISIBLE;
 		textView.setText(item.input.toString());
