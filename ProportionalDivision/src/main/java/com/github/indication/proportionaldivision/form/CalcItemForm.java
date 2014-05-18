@@ -1,5 +1,6 @@
 package com.github.indication.proportionaldivision.form;
 
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ public class CalcItemForm {
 	public TextView textKey;
 	public TextView textView;
 	public TextView textSymbolEquals;
+	public TextView textException;
 
 	public CalcItemForm(View view) {
 		setup(view);
@@ -24,6 +26,7 @@ public class CalcItemForm {
 		textResult = (TextView) view.findViewById(R.id.textResult);
 		textKey = (TextView) view.findViewById(R.id.textKey);
 		textSymbolEquals = (TextView) view.findViewById(R.id.textSymbolEquals);
+		textException = (TextView) view.findViewById(R.id.textException);
 	}
 
 
@@ -36,5 +39,11 @@ public class CalcItemForm {
 		textResult.setText(item.result.toString());
 		textKey.setText(item.type.getSymbol());
 		textSymbolEquals.setVisibility(visible);
+		if(TextUtils.isEmpty(item.exception)){
+			textException.setVisibility(View.GONE);
+		} else {
+			textException.setVisibility(View.VISIBLE);
+			textException.setText(item.exception);
+		}
 	}
 }

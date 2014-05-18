@@ -1,5 +1,6 @@
 package com.github.indication.proportionaldivision.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListCalcAdapter extends BaseAdapter {
+	private static final String TAG = ListCalcAdapter.class.getSimpleName();
 	static public class Item {
 		public CalcType type;
 		public BigDecimal input;
@@ -32,6 +34,7 @@ public class ListCalcAdapter extends BaseAdapter {
 
 	static public class ResultItem extends Item {
 		public BigDecimal result;
+		public String exception;
 
 		public ResultItem() {
 			super();
@@ -68,24 +71,31 @@ public class ListCalcAdapter extends BaseAdapter {
 				current = new BigDecimal(wk.input.toString());
 				item.type = CalcType.None;
 			} else {
-				// start calculate
-				switch (wk.type) {
-					case None:
-						//fall through
-					default:
-						break;
-					case Plus:
-						current = current.add(wk.input);
-						break;
-					case Minus:
-						current = current.add(wk.input.negate());
-						break;
-					case Devide:
-						current = current.divide(wk.input);
-						break;
-					case Multiple:
-						current = current.multiply(wk.input);
-						break;
+				try {
+					// start calculate
+					switch (wk.type) {
+						case None:
+							//fall through
+						default:
+							break;
+						case Plus:
+							current = current.add(wk.input);
+							break;
+						case Minus:
+							current = current.add(wk.input.negate());
+							break;
+						case Devide:
+							current = current.divide(wk.input);
+							break;
+						case Multiple:
+							current = current.multiply(wk.input);
+							break;
+					}
+				} catch(ArithmeticException e){
+					item.exception = e.getLocalizedMessage();
+					Log.e(TAG, "calc", e);
+				} catch(Exception e){
+					Log.e(TAG, "calc", e);
 				}
 			}
 			item.result = new BigDecimal(current.toString());
