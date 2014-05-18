@@ -82,7 +82,7 @@ public class ListCalcAdapter extends BaseAdapter {
 							current = current.add(wk.input);
 							break;
 						case Minus:
-							current = current.add(wk.input.negate());
+							current = current.subtract(wk.input);
 							break;
 						case Devide:
 							current = current.divide(wk.input);
