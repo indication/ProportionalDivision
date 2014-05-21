@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<ListPreference
+		android:key="@string/preference_round"
+		android:entries="@array/round_key"
+		android:entryValues="@array/round_value"
+		android:title="@string/preference_round"
+		android:summary="@string/preference_round_description"/>
+	<EditTextPreference
+		android:key="@string/preference_round_scale"
+		android:title="@string/preference_round_scale"
+		android:inputType="number"
+		android:numeric="integer" />
+</PreferenceScreen>
