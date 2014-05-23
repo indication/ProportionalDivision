@@ -29,9 +29,9 @@
 		android:orientation="vertical">
 
 		<LinearLayout
+			android:id="@+id/layoutSecond"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="5dp"
 			android:orientation="horizontal">
 
 			<LinearLayout
@@ -43,6 +43,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="Clear"
+					tools:ignore="HardcodedText"
 					android:textAppearance="?android:attr/textAppearanceSmall"/>
 
 				<Switch
@@ -75,18 +76,31 @@
 				tools:ignore="HardcodedText"/>
 
 			<Button
-				android:id="@+id/buttonDevide"
+				android:id="@+id/buttonDivide"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="/"
 				tools:ignore="HardcodedText"/>
 		</LinearLayout>
-
 		<LinearLayout
+			android:id="@+id/layoutFirst"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:orientation="horizontal">
+			<Button
+				android:id="@+id/buttonGo"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="+"
+				tools:ignore="HardcodedText"/>
 
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_marginTop="5dp"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
 
 			<Button
 				android:id="@+id/buttonClear"
@@ -105,7 +119,7 @@
 
 			<EditText
 				android:id="@+id/editText"
-				android:layout_width="match_parent"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
 				android:ems="10"
@@ -114,6 +128,7 @@
 				android:imeOptions="actionNone"
 				android:inputType="numberSigned|numberDecimal"
 				android:numeric="decimal"
+				tools:ignore="HardcodedText"
 				android:textAppearance="?android:attr/textAppearanceLarge"/>
 
 		</LinearLayout>

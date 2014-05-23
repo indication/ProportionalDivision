@@ -2,6 +2,7 @@ package com.github.indication.proportionaldivision.form;
 
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -21,6 +22,8 @@ public class CalcInputForm {
 	public List<Button> buttons = new ArrayList<Button>();
 	public Button buttonClear;
 	public ToggleButton buttonKeep;
+	public ViewGroup layoutFirst;
+	public ViewGroup layoutSecond;
 	protected EventClear eventClear = new EventClear() {
 		@Override
 		public void onClearClicked() {
@@ -54,13 +57,16 @@ public class CalcInputForm {
 		for (int res : new int[]{
 				R.id.buttonPlus
 				, R.id.buttonMinus
-				, R.id.buttonDevide
+				, R.id.buttonDivide
 				, R.id.buttonMultiple
+				, R.id.buttonGo
 		}) {
 			buttons.add((Button) view.findViewById(res));
 		}
 		buttonKeep = (ToggleButton) view.findViewById(R.id.toggleButtonKeep);
 		buttonClear = (Button) view.findViewById(R.id.buttonClear);
+		layoutFirst = (ViewGroup) view.findViewById(R.id.layoutFirst);
+		layoutSecond = (ViewGroup) view.findViewById(R.id.layoutSecond);
 
 	}
 
@@ -74,6 +80,13 @@ public class CalcInputForm {
 	public void setClearChecked(boolean status) {
 		switchClear.setChecked(status);
 		switchClear.requestLayout();
+		if(status){
+			layoutFirst.setVisibility(View.VISIBLE);
+			layoutSecond.setVisibility(View.GONE);
+		} else {
+			layoutFirst.setVisibility(View.GONE);
+			layoutSecond.setVisibility(View.VISIBLE);
+		}
 	}
 
 	public void setupEvent() {
@@ -104,7 +117,7 @@ public class CalcInputForm {
 			public void onClick(View view) {
 				CalcType input = null;
 				switch (view.getId()) {
-					case R.id.buttonDevide:
+					case R.id.buttonDivide:
 						input = CalcType.Devide;
 						break;
 					case R.id.buttonMinus:
@@ -114,6 +127,9 @@ public class CalcInputForm {
 						input = CalcType.Multiple;
 						break;
 					case R.id.buttonPlus:
+						input = CalcType.Plus;
+						break;
+					case R.id.buttonGo:
 						input = CalcType.Plus;
 						break;
 					default:
