@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Proportional Division</string>
+	<string name="app_description"><![CDATA[
+		This is a calculator application.
+		This app is not yet been created.
+
+		This app is not guaranteed because it is <b>NO WARRANTY</b> at any cost.
+		There is a try-catch, to abnormal termination by the input value and is by design.
+		It is also possible to fork those who are worried. Therefore, We have adopted the WTFPL license.
+	]]></string>
+	<string name="app_license">Application License</string>
+	<string name="app_license_body"><![CDATA[
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                    Version 2, December 2004
+
+ Copyright &#169; 2004 Sam Hocevar <sam@hocevar.net>
+
+ Everyone is permitted to copy and distribute verbatim or modified
+ copies of this license document, and changing it is allowed as long
+ as the name is changed.
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.
+	]]></string>
+	<string name="app_version"><![CDATA[
+		<h1>v0.1</h1>
+		First release with WTFPL
+	]]></string>
+	<string name="version">Version</string>
+
+</resources>

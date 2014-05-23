@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:tools="http://schemas.android.com/tools"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:paddingBottom="@dimen/activity_vertical_margin"
+				android:paddingLeft="@dimen/activity_horizontal_margin"
+				android:paddingRight="@dimen/activity_horizontal_margin"
+				android:paddingTop="@dimen/activity_vertical_margin"
+				tools:context="com.github.indication.proportionaldivision.MainActivity$PlaceholderFragment">
+
+
+	<ListView
+		android:id="@android:id/list"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_above="@+id/linearLayout"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentStart="true"
+		android:layout_alignParentTop="true"
+		tools:listitem="@layout/item_calc_list"/>
+
+	<LinearLayout
+		android:id="@+id/linearLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentStart="true"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:id="@+id/layoutSecond"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Clear"
+					tools:ignore="HardcodedText"
+					android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+				<Switch
+					android:id="@+id/switchClear"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:clickable="false"
+					android:focusableInTouchMode="false"/>
+			</LinearLayout>
+
+			<Button
+				android:id="@+id/buttonPlus"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="+"
+				tools:ignore="HardcodedText"/>
+
+			<Button
+				android:id="@+id/buttonMinus"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="-"
+				tools:ignore="HardcodedText"/>
+
+			<Button
+				android:id="@+id/buttonMultiple"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="*"
+				tools:ignore="HardcodedText"/>
+
+			<Button
+				android:id="@+id/buttonDivide"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="/"
+				tools:ignore="HardcodedText"/>
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/layoutFirst"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+			<Button
+				android:id="@+id/buttonGo"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="+"
+				tools:ignore="HardcodedText"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_marginTop="5dp"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<Button
+				android:id="@+id/buttonClear"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="C"
+				tools:ignore="HardcodedText"/>
+
+			<ToggleButton
+				android:id="@+id/toggleButtonKeep"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:textOff="Clear"
+				android:textOn="Keep"/>
+
+			<EditText
+				android:id="@+id/editText"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:ems="10"
+				android:gravity="right"
+				android:hint="123.5"
+				android:imeOptions="actionNone"
+				android:inputType="numberSigned|numberDecimal"
+				android:numeric="decimal"
+				tools:ignore="HardcodedText"
+				android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</RelativeLayout>

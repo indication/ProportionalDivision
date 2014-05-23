@@ -1,0 +1,65 @@
+apply plugin: 'android'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.3"
+    testBuildType "debug"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 19
+
+        versionCode 1
+        versionName "0.1"
+        testPackageName "com.github.indication.proportionaldivision"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+        testHandleProfiling true
+        testFunctionalTest true
+    }
+    lintOptions {
+        abortOnError false
+    }
+    signingConfigs {
+        release
+    }
+    buildTypes {
+        debug {
+            debuggable true
+            zipAlign true
+        }
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+
+            debuggable false
+            zipAlign true
+            if (project.hasProperty('keyAlias')) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v4:19.+'
+    compile 'com.android.support:appcompat-v7:19.+'
+
+    androidTestCompile 'com.google.guava:guava:11.0.2'
+    androidTestCompile 'junit:junit:4.8.2'
+}
+
+if (project.hasProperty('keyAlias')) {
+    android.signingConfigs.release.keyAlias = keyAlias
+}
+if (project.hasProperty('keyPassword')) {
+    android.signingConfigs.release.keyPassword = keyPassword
+}
+if (project.hasProperty('storeFile')) {
+    android.signingConfigs.release.storeFile = file(storeFile)
+}
+if (project.hasProperty('storePassword')) {
+    android.signingConfigs.release.storePassword = storePassword
+}
+
+

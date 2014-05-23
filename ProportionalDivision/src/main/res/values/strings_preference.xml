@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="title_activity_settings">Settings</string>
+	<string name="pref_header_general">General</string>
+	<string-array name="round_key">
+		<item>None</item>
+		<item>Up</item>
+		<item>Down</item>
+		<item>Ceiling</item>
+		<item>Floor</item>
+		<item>Half up</item>
+		<item>Half down</item>
+		<item>Half even</item>
+		<item>UNNECESSARY</item>
+	</string-array>
+	<string-array name="round_value">
+		<item>NONE</item>
+		<item>UP</item>
+		<item>DOWN</item>
+		<item>CEILING</item>
+		<item>FLOOR</item>
+		<item>HALF_UP</item>
+		<item>HALF_DOWN</item>
+		<item>HALF_EVEN</item>
+		<item>UNNECESSARY</item>
+	</string-array>
+</resources>
