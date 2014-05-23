@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.github.indication.proportionaldivision.fragment.AboutFragment;
 import com.github.indication.proportionaldivision.fragment.ListCalcFragment;
 import com.github.indication.proportionaldivision.fragment.NavigationDrawerFragment;
 import com.github.indication.proportionaldivision.fragment.PlaceholderFragment;
@@ -51,6 +52,9 @@ public class MainActivity extends ActionBarActivity
 				fragment = ListCalcFragment.newInstance();
 				break;
 			case 1:
+				fragment = AboutFragment.newInstance();
+				break;
+			case 2:
 				fragment = PlaceholderFragment.newInstance(position + 1);
 				break;
 			default:
@@ -69,7 +73,7 @@ public class MainActivity extends ActionBarActivity
 				mTitle = getString(R.string.title_list_calc);
 				break;
 			case 2:
-				mTitle = getString(R.string.title_section2);
+				mTitle = getString(R.string.title_about);
 				break;
 			case 3:
 				mTitle = getString(R.string.title_section3);
