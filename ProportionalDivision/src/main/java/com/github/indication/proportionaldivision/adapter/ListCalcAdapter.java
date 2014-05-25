@@ -1,5 +1,6 @@
 package com.github.indication.proportionaldivision.adapter;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.github.indication.proportionaldivision.enumurations.CalcType;
 import com.github.indication.proportionaldivision.form.CalcItemForm;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +31,22 @@ public class ListCalcAdapter extends BaseAdapter {
 			type = calcType;
 			input = data;
 			isValid = true;
+		}
+	}
+	protected RoundingMode rounding = null;
+	public void setupRounding(String round){
+		if(TextUtils.isEmpty(round) || "NONE".equals(round)){
+			rounding = null;
+		} else {
+			rounding = RoundingMode.valueOf(round);
+		}
+	}
+	protected Integer scale = null;
+	public void setupScale(String s){
+		if(TextUtils.isEmpty(s)){
+			scale = null;
+		} else {
+			scale = Integer.parseInt(s);
 		}
 	}
 
@@ -85,7 +103,12 @@ public class ListCalcAdapter extends BaseAdapter {
 							current = current.subtract(wk.input);
 							break;
 						case Devide:
-							current = current.divide(wk.input);
+							if(rounding == null)
+								current = current.divide(wk.input);
+							else if(scale != null)
+								current = current.divide(wk.input, scale, rounding);
+							else
+								current = current.divide(wk.input, rounding);
 							break;
 						case Multiple:
 							current = current.multiply(wk.input);

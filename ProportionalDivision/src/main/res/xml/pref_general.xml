@@ -4,13 +4,13 @@
 	<ListPreference
 		android:entries="@array/round_key"
 		android:entryValues="@array/round_value"
-		android:key="@string/preference_round"
+		android:key="preference_round"
 		android:summary="@string/preference_round_description"
 		android:defaultValue="NONE"
 		android:title="@string/preference_round"/>
 	<EditTextPreference
 		android:inputType="number"
-		android:key="@string/preference_round_scale"
+		android:key="preference_round_scale"
 		android:numeric="integer"
 		android:defaultValue=""
 		android:title="@string/preference_round_scale"/>

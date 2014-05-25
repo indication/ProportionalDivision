@@ -1,6 +1,8 @@
 package com.github.indication.proportionaldivision.fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,6 +62,20 @@ public class ListCalcFragment extends ListFragment {
 				getListView().smoothScrollToPosition(getListView().getCount());
 			}
 		});
+		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+		sharedPrefs.registerOnSharedPreferenceChangeListener(new SharedPreferences.OnSharedPreferenceChangeListener() {
+			@Override
+			public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
+				setupAdapterFromPrefs(sharedPreferences);
+				adapter.notifyDataSetChanged();
+			}
+		});
+		setupAdapterFromPrefs(sharedPrefs);
 		setListAdapter(adapter);
+	}
+
+	protected void setupAdapterFromPrefs(SharedPreferences sharedPrefs){
+		adapter.setupRounding(sharedPrefs.getString("preference_round","NONE"));
+		adapter.setupScale(sharedPrefs.getString("preference_round_scale",""));
 	}
 }
