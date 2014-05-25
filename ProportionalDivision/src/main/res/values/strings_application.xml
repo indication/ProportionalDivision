@@ -26,7 +26,8 @@
   0. You just DO WHAT THE FUCK YOU WANT TO.
 	]]></string>
 	<string name="app_version"><![CDATA[
-		<h1>v0.1</h1>
+		<h1>v0.2</h1>
+		<h1>v0.1 - 2014/05/24</h1>
 		First release with WTFPL
 	]]></string>
 	<string name="version">Version</string>
